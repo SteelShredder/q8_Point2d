@@ -12,11 +12,7 @@ private:
     double m_x;
     double m_y;
 public:
-    Point2d() : m_x { 0.0 }, m_y { 0.0 }
-    {
-        
-    }
-    Point2d(double x, double y) : m_x { x }, m_y { y }
+    Point2d(double x=0.0, double y=0.0) : m_x { x }, m_y { y }
     {
         
     }

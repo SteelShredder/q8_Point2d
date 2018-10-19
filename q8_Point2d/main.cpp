@@ -29,7 +29,16 @@ public:
         const double &y2 = secondPoint.m_y;
         return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
     }
+    friend double distanceFrom(const Point2d &firstPoint, const Point2d &secondPoint);
 };
+double distanceFrom(const Point2d &firstPoint, const Point2d &secondPoint)
+{
+    const double &x1 = firstPoint.m_x;
+    const double &y1 = firstPoint.m_y;
+    const double &x2 = secondPoint.m_x;
+    const double &y2 = secondPoint.m_y;
+    return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+}
 int main()
 {
     Point2d first;
@@ -37,6 +46,6 @@ int main()
     first.print();
     second.print();
     std::cout << "Distance between two points: " << first.distanceTo(second) << '\n';
-    
+    std::cout << "Distance between two points: " << distanceFrom(first, second) << '\n';
     return 0;
 }

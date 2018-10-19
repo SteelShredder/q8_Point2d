@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <cmath>
 class Point2d
 {
 private:
@@ -16,9 +17,17 @@ public:
     {
         
     }
-    void print()
+    void print() const
     {
         std::cout << "Point2d(" << m_x << ", " << m_y << ");" << std::endl;
+    }
+    double distanceTo(Point2d secondPoint) const
+    {
+        const double &x1 = m_x;
+        const double &y1 = m_y;
+        const double &x2 = secondPoint.m_x;
+        const double &y2 = secondPoint.m_y;
+        return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
     }
 };
 int main()
